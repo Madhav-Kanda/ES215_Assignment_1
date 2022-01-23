@@ -1,21 +1,20 @@
 import timeit
 import random as rand
 
+matrix = int(input())
 
-dic = {1: 32, 2: 64, 3: 128, 4: 256, 5: 512}
-print("Choose an option:\n 1:32,2:64,3:128,4:256,5:512\n")
-n = int(input())
-num = dic[n]
-arr1 = [[rand.randint(0, 100) for i in range(num)] for j in range(num)]
-arr2 = [[rand.randint(0, 100) for t in range(num)] for l in range(num)]
-ans = [[0 for m in range(num)] for p in range(num)]
+a = [[rand.randint(0, 10) for i in range(matrix)] for j in range(matrix)]
+
+b = [[rand.randint(0, 10) for t in range(matrix)] for l in range(matrix)]
+
+ans = [[0 for m in range(matrix)] for p in range(matrix)]
 
 start = timeit.default_timer()
-for i in range(num):
-    for j in range(num):
-        for k in range(num):
-            ans[i][j] += arr1[i][k]*arr2[k][j]
-stop = timeit.default_timer()
-print("Time : ", stop-start)
+for i in range(matrix):
+    for j in range(matrix):
+        for k in range(matrix):
+            ans[i][j] += a[i][k]*b[k][j]
 
-# print(ans)
+end = timeit.default_timer()
+
+print("Time : ", end-start)
