@@ -1,5 +1,6 @@
 #include <iostream>
-#include <time.h>
+#include <ctime>
+
 using namespace std;
 
 struct timespec;
@@ -11,9 +12,11 @@ int main()
 {
     int n;
     cin >> n;
-    long long a[n][n] = {0};
-    long long b[n][n] = {0};
-    long long c[n][n] = {0};
+    int a[n][n] = {0};
+    int b[n][n] = {0};
+    int c[n][n] = {0};
+    clk1 = clock();
+
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -42,6 +45,7 @@ int main()
             }
         }
     }
+
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -50,4 +54,9 @@ int main()
         }
         cout << endl;
     }
+    clk2 = clock() - clk1;
+    float CPU = (float)clk2 / CLOCKS_PER_SEC;
+    cout << "The time taken by the meat portion of the program is:"
+         << " ";
+    cout << CPU << endl;
 }

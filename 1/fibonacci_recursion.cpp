@@ -27,7 +27,7 @@ int main()
 {
 
     clk1 = clock();
-    for (int i = 0; i <= 100; i++)
+    for (int i = 0; i <= 40; i++)
     {
         cout << i << " ";
         cout << fibonacci(i) << " ";
